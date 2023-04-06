@@ -1,0 +1,32 @@
+name: Lava
+version: '${project.version}'
+main: erbatista.lava.Lava
+api-version: 1.19
+depend: [ ]
+authors: [ EricBatista ]
+commands:
+  startlava:
+    description: Inicia a subida da lava
+    usage: /<command>
+    permission: lava.start
+    permission-message: Você não pode iniciar o evento!
+  setlavaspeed:
+    description: Altera a velocidade da subida da lava
+    usage: /<command>
+    permission: lava.start
+    permission-message: Você não pode alterar a velocidade da lava!
+  pauselava:
+    description: Para a subida da Lava
+    usage: /<command>
+    permission: lava.start
+    permission-message: Você não pode pausar o evento!
+  forcelava:
+    description: Força a subida da Lava
+    usage: /<command>
+    permission: lava.start
+    permission-message: Você não pode iniciar o evento!
+  closebarrier:
+    description: Diminui o tamanho da barreira após 2 minutos.
+    usage: /<command>
+    permission: lava.start
+    permission-message: Você não pode modificar a barreira!

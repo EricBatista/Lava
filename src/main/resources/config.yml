@@ -1,0 +1,9 @@
+Radius: 200.0
+MinYCoords: -63.0
+MaxYCoords: 202.0
+CenterX: 0.0
+CenterZ: 0.0
+TimeToRaise: 40
+TimeToStartBorder: 120
+TimeToStart: 180
+WorldName: "world"
