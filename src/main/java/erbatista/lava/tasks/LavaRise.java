@@ -79,7 +79,7 @@ public class LavaRise extends BukkitRunnable {
 
 
         if(Data.isIsLavaRising()) {
-            Data.getBossBar().progress((float)(Data.getY()+64)/374);
+            Data.getBossBar().progress((float)(Data.getY()+64)/Integer.parseInt(String.valueOf(Data.getMaxY())));
             Data.addY();
             BukkitTask task = new LavaRise(this.x1, this.x2, this.z1, this.z2).runTaskLater(Data.getPlugin(), Data.getTimeToRaise());
         }
