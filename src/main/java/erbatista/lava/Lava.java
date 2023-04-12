@@ -24,6 +24,7 @@ public final class Lava extends JavaPlugin {
         Data.setCenterZ(getConfig().getDouble("CenterZ"));
         Data.setRadius(getConfig().getDouble("Radius"));
         Data.setTimeToStart(getConfig().getInt("TimeToStart"));
+        Data.setShouldBan(getConfig().getBoolean("ShouldBan"));
 
         getCommand("startlava").setExecutor(new LavaRiseCommand());
         getCommand("setlavaspeed").setExecutor(new SetLavaSpeed());

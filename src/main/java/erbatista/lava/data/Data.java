@@ -11,6 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Data {
 
     private static World world = Bukkit.getWorld("world");
+    private static boolean shouldBan = true;
     private static boolean isLavaRising = false;
     private static double y = 0;
     private static double maxY = 202;
@@ -120,5 +121,13 @@ public class Data {
 
     public static void setTimeToStart(int timeToStart) {
         Data.timeToStart = timeToStart;
+    }
+
+    public static boolean isShouldBan() {
+        return shouldBan;
+    }
+
+    public static void setShouldBan(boolean shouldBan) {
+        Data.shouldBan = shouldBan;
     }
 }
