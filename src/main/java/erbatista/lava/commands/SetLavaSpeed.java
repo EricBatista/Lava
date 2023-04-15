@@ -12,9 +12,9 @@ public class SetLavaSpeed implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
         try{
-            long l = Long.parseLong(args[0]);
-            Data.setTimeToRaise(l);
-            sender.sendMessage("Configurando velocidade da Lava para "+l);
+            int i = Integer.parseInt(args[0]);
+            Data.setTimeToRaise(i);
+            sender.sendMessage("Configurando velocidade da Lava para "+i);
         }
         catch (Exception e){
             sender.sendMessage("Erro ao executar o comando");

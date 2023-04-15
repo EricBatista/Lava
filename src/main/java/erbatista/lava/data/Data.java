@@ -2,30 +2,35 @@ package erbatista.lava.data;
 
 import erbatista.lava.Lava;
 
+import erbatista.lava.tasks.Task;
 import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Data {
 
+    private static final List<Task> tasks = new ArrayList<>();
     private static World world = Bukkit.getWorld("world");
     private static boolean shouldBan = true;
     private static boolean isLavaRising = false;
     private static double y = 0;
     private static double maxY = 202;
     private static JavaPlugin plugin = JavaPlugin.getPlugin(Lava.class);
-    private static long timeToRaise = 80;
+    private static int timeToRaise = 40;
     private static int timeToStart = 180;
     private static double centerX = 0.0;
     private static double centerZ = 0.0;
     private static double radius = 200.0;
     private static BossBar bossBar = BossBar.bossBar(
-            Component.text("Sejam bem-vindos a Festa dos Inscritos!"),
+            Component.text("Sejam bem-vindos a §bFesta dos Inscritos!"),
             1f,
             BossBar.Color.YELLOW,
-            BossBar.Overlay.NOTCHED_20);
+            BossBar.Overlay.PROGRESS);
 
     public static World getWorld() {
         return world;
@@ -75,11 +80,11 @@ public class Data {
         Data.centerZ = centerZ;
     }
 
-    public static long getTimeToRaise() {
+    public static int getTimeToRaise() {
         return timeToRaise;
     }
 
-    public static void setTimeToRaise(long timeToRaise) {
+    public static void setTimeToRaise(int timeToRaise) {
         Data.timeToRaise = timeToRaise;
     }
 
@@ -129,5 +134,13 @@ public class Data {
 
     public static void setShouldBan(boolean shouldBan) {
         Data.shouldBan = shouldBan;
+    }
+
+    public static List<Task> getTasks() {
+        return tasks;
+    }
+
+    public static void addTask(Task task){
+        tasks.add(task);
     }
 }

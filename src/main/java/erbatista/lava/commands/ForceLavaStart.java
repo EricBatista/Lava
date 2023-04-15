@@ -28,8 +28,6 @@ public class ForceLavaStart implements CommandExecutor {
 
             Bukkit.getLogger().log(Level.INFO,"Forçando subida da lava.");
 
-            BukkitTask task = new Countdown(5).runTask(Data.getPlugin());
-
             Data.setIsLavaRising(true);
 
             List<Player> players = (List<Player>) Bukkit.getOnlinePlayers().stream().toList();

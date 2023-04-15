@@ -28,11 +28,11 @@ public class LavaRiseCommand implements CommandExecutor {
 
             Bukkit.getLogger().log(Level.INFO,"Iniciando subida da lava.");
 
-            BukkitTask task = new Countdown(Data.getTimeToStart()).runTask(Data.getPlugin());
+            Data.addTask(new Countdown(Data.getTimeToStart()));
 
             Data.setIsLavaRising(true);
 
-            List<Player> players = (List<Player>) Bukkit.getOnlinePlayers().stream().toList();
+            List<Player> players = Data.getWorld().getPlayers() ;
 
             for (Player player : players) {
                 TextUtils.sendTitleToPlayer(player,"Se prepare!");

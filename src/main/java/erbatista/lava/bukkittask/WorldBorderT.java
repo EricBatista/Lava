@@ -1,22 +1,20 @@
-package erbatista.lava.tasks;
+package erbatista.lava.bukkittask;
 
 import erbatista.lava.data.Data;
-import net.kyori.adventure.bossbar.BossBar;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Difficulty;
 import org.bukkit.World;
 import org.bukkit.scheduler.BukkitRunnable;
-import org.bukkit.scheduler.BukkitTask;
 
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 
-public class SetWorldBorder extends BukkitRunnable {
+public class WorldBorderT extends BukkitRunnable {
 
     private String worldName = "world";
 
-    public SetWorldBorder(String worldName) {
+    public WorldBorderT(String worldName) {
         this.worldName = worldName;
     }
 
@@ -35,7 +33,5 @@ public class SetWorldBorder extends BukkitRunnable {
         world.showBossBar(Data.getBossBar());
 
         world.setDifficulty(Difficulty.PEACEFUL);
-
-
     }
 }

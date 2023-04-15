@@ -1,6 +1,7 @@
 package erbatista.lava.events;
 
 import erbatista.lava.data.Data;
+import erbatista.lava.utils.VerifyUtils;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
 import org.bukkit.GameMode;
@@ -14,6 +15,7 @@ public class DeathEvent implements Listener {
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event){
         Player player = event.getPlayer();
+        VerifyUtils.verifyWinners();
         if(player.hasPermission("lava.adm")){
             player.showTitle(Title.title(Component.text("Você Morreu!"),Component.text("")));
             player.setGameMode(GameMode.SPECTATOR);
